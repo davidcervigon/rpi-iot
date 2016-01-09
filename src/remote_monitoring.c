@@ -88,6 +88,7 @@ EXECUTE_COMMAND_RESULT SetHumidity(Thermostat* thermostat, double humidity)
 EXECUTE_COMMAND_RESULT BlinkRedLed(Thermostat* thermostat, double seconds)
 {
 	(void)printf("Received order to blink red led for %.02fs seconds\r\n", seconds);
+	pinMode (0, OUTPUT) ;
 	digitalWrite (0, HIGH);
     delay (seconds*1000);
     digitalWrite (0, LOW);
@@ -97,6 +98,7 @@ EXECUTE_COMMAND_RESULT BlinkRedLed(Thermostat* thermostat, double seconds)
 EXECUTE_COMMAND_RESULT BlinkGreenLed(Thermostat* thermostat, double seconds)
 {
 	(void)printf("Received order to blink green led for %.02fs seconds\r\n", seconds);
+	pinMode (2, OUTPUT) ;
 	digitalWrite (2, HIGH);
     delay (seconds*1000);
     digitalWrite (2, LOW);
